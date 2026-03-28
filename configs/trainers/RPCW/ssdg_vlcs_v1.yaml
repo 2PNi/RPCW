@@ -1,0 +1,45 @@
+DATALOADER:
+    TRAIN_X:
+        SAMPLER: "SeqDomainSampler"
+        BATCH_SIZE: 48
+    TRAIN_U:
+        SAME_AS_X: True
+    TEST:
+        BATCH_SIZE: 100
+    NUM_WORKERS: 4
+    RETURN_IMG0: True
+
+OPTIM:
+    NAME: "sgd"
+    LR: 0.003
+    MAX_EPOCH: 30
+    LR_SCHEDULER: "cosine"
+
+TRAIN:
+    COUNT_ITER: "train_u"
+    PRINT_FREQ: 10
+
+TRAINER:
+    RPCW:
+        STRONG_TRANSFORMS: ["random_flip", "randaugment2", "normalize", "cutout"]
+        SIGMA: 0.05
+        C_OPTIM:
+            NAME: "sgd"
+            LR: 0.01
+            MAX_EPOCH: 30
+            LR_SCHEDULER: "cosine"
+        P_OPTIM:
+            NAME: "sgd"
+            LR: 0.01
+            MAX_EPOCH: 30
+            LR_SCHEDULER: "cosine"
+        STRONG_AUG: True
+        STYLE: True
+        STYLE_CONS: True
+        AUX_TASK: True
+        WEIGHT_AUG: 0.4
+        WEIGHT_STYLE: 0.3
+        WEIGHT_STYLE_SCR: 0.2
+        WEIGHT_AUX: 0.6
+        ADAIN_DECODER: "weights/decoder.pth"
+        ADAIN_VGG: "weights/vgg_normalised.pth"
