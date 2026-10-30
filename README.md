@@ -1,4 +1,5 @@
 ### Enhancing Unlabeled Data Efficiency for Semi-Supervised Domain Generalization via Reliability-Guided Energy Prior
-<p style="text-align: justify; text-justify: inter-word;">
+
+<div style="text-align: justify">
   This paper conducts an in-depth study of domain generalization (DG) to address distribution shifts when applying a model trained on a series of known target domains to unknown target domains. However, existing DG methods heavily rely on labels and high-confidence data, suffering from data efficiency issues and incurring expensive training costs. In this paper, we propose a novel multi-task semi-supervised domain generalization (RPCW) method that relaxes the strict requirement for plentiful labeled data in source domains while emphasizing superior generalization performance in unknown domains. This method comprises a contrastive task guided by reliability with energy prior and a semi-supervised task weighted by domain consistency and coherence, respectively, promoting the model to learn task-related features from unlabeled-confident and unlabeled-unconfident data and thereby jointly optimizing the covariate shift dilemma faced by the feature extractor. Experiments on two standard domain generalization datasets and a heterogeneous geological disaster dataset demonstrate that RPCW achieves better accuracy and generalization performance compared to state-of-the-art methods in scenarios with sparse labels.
-</p>
+</div>
